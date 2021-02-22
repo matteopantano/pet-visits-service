@@ -1,8 +1,12 @@
-package visits;
+package visits.infrastructure_web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import visits.application.OwnerVisitPost;
+import visits.application.VisitStatus;
+import visits.domain.Visit;
+import visits.domain.VisitRepository;
 
 import java.util.List;
 

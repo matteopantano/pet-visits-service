@@ -1,29 +1,17 @@
-package visits;
+package visits.domain;
 
-import javax.persistence.*;
+import visits.application.VisitStatus;
+
+
 import java.time.ZonedDateTime;
 
-@Entity(name = "VISIT_ENTITY")
 public class Visit {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(name = "owner_id")
     private int ownerId;
-
-    @Column(name = "pet_id")
     private int petId;
-
-    @Column(name = "visit_date")
     private ZonedDateTime date;
-
-    @Column(name = "vet_id")
     private int vetId;
-
-    @Enumerated(EnumType.STRING)
-    @Column(length = 8, name = "status")
     private VisitStatus status;
 
     public Visit() {

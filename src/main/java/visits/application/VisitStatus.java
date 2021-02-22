@@ -1,4 +1,4 @@
-package visits;
+package visits.application;
 
 public enum VisitStatus {
     PENDING,

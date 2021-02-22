@@ -1,4 +1,4 @@
-package visits;
+package visits.domain;
 
 import org.springframework.data.repository.Repository;
 
