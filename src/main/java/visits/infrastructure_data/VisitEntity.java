@@ -79,4 +79,56 @@ public class VisitEntity {
         this.status = status;
     }
 
+
+    public static final class Builder {
+        private int id;
+        private int ownerId;
+        private int petId;
+        private ZonedDateTime date;
+        private int vetId;
+        private VisitStatus status;
+
+        private Builder() {
+        }
+
+        public static Builder thisVisitEntity() {
+            return new Builder();
+        }
+
+        public Builder thisOwner(int ownerId) {
+            this.ownerId = ownerId;
+            return this;
+        }
+
+        public Builder thisPet(int petId) {
+            this.petId = petId;
+            return this;
+        }
+
+        public Builder thisDate(ZonedDateTime date) {
+            this.date = date;
+            return this;
+        }
+
+        public Builder thisVet(int vetId) {
+            this.vetId = vetId;
+            return this;
+        }
+
+        public Builder thisStatus(VisitStatus status) {
+            this.status = status;
+            return this;
+        }
+
+        public VisitEntity build() {
+            VisitEntity visitEntity = new VisitEntity();
+            visitEntity.setOwnerId(ownerId);
+            visitEntity.setPetId(petId);
+            visitEntity.setDate(date);
+            visitEntity.setVetId(vetId);
+            visitEntity.setStatus(status);
+            return visitEntity;
+        }
+    }
+
 }
