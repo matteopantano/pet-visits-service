@@ -3,18 +3,19 @@ package visits.infrastructure_data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import visits.domain.Visit;
+import visits.domain.VisitRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-public class VisitRepository implements VisitRepository {
+public class VisitSpringRepository implements VisitRepository {
 
     @Autowired
     private VisitToVisitEntityMapper mapper;
 
     @Autowired
-    private VisitEntityRepository entityRepository;
+    private VisitEntitySpringRepository entityRepository;
 
     @Override
     public Visit findById(int id) {
@@ -23,7 +24,7 @@ public class VisitRepository implements VisitRepository {
     }
 
     @Override
-    public List<Visit> findAll(int id) {
+    public List<Visit> findAllByOwnerId(int id) {
         return entityRepository
                 .findAllByOwnerId(id)
                 .stream()
